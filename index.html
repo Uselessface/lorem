@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="manifest" href="./manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.png"
+    />
+    <meta http-equiv="Cache-Control" content="public, max-age=7200" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lorem ipsum dolor sit amet." />
+    <title>LOREMIPSUM.NET</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/pages/home.css" />
+    <script defer src="./js/script.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="logo header__logo">
+        <a class="logo__link" href="./"
+          >LOREMIPSUM.<span class="highlighted">NET</span></a
+        >
+      </h1>
+
+      <button
+        class="nav__button"
+        type="button"
+        hidden
+        aria-expanded="false"
+        aria-controls="nav"
+        aria-label="Open navigation menu"
+      ></button>
+      <nav class="nav header__nav" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="./" aria-current="location">Бизнес</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="./">О нас</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="./">Цены</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#order">Оформить заказ</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <h2 class="hero__title">
+          <span class="highlighted">Lorem ipsum</span> dolor sit<br />amet
+          consectetur <span class="highlighted">adipiscing</span>
+        </h2>
+
+        <main class="hero__text">
+          <h3 class="hero__list-title">
+            At vero eos et accusamus et iusto odio dignissimos ducimus!
+          </h3>
+          <ul class="hero__list">
+            <li class="hero__list-item">Totam rem aperiam eaque ipsa</li>
+            <li class="hero__list-item">
+              Sit voluptatem accusantium doloremque laudantium
+            </li>
+            <li class="hero__list-item">
+              Sed ut perspiciatis, unde omnis iste natus error
+            </li>
+          </ul>
+        </main>
+
+        <footer class="hero__buttons">
+          <a
+            class="button button_accent hero__order-button"
+            href="#order-form"
+            role="button"
+            >Заказать</a
+          >
+          <a
+            class="button button_white hero__more-button"
+            href="#order"
+            role="button"
+            >Подробнее</a
+          >
+        </footer>
+      </section>
+
+      <section class="order" id="order">
+        <header class="order__header">
+          <h2 class="order__title">
+            Оформление
+            <span class="highlighted">заказа</span>
+          </h2>
+          <div class="order__subtitle">
+            Перед заполнением формы ознакомьтесь с нашей схемой работы!
+          </div>
+        </header>
+
+        <main class="order__main">
+          <ul class="plan order__plan">
+            <li class="plan__item">
+              <div class="plan__icon">
+                <img
+                  src="./assets/images/icons/search.svg"
+                  width="35"
+                  height="35"
+                  alt="Lorem ipsum dolor sit amet"
+                />
+              </div>
+              <div class="plan__text">Lorem ipsum dolor sit amet</div>
+            </li>
+            <li class="plan__item">
+              <div class="plan__icon">
+                <img
+                  src="./assets/images/icons/percent.svg"
+                  width="31"
+                  height="32"
+                  alt="Сonsecteturadipiscing elit"
+                />
+              </div>
+              <div class="plan__text">Сonsecteturadipiscing elit</div>
+            </li>
+            <li class="plan__item">
+              <div class="plan__icon">
+                <img
+                  src="./assets/images/icons/new-file.svg"
+                  width="40"
+                  height="43"
+                  alt="Sed do eiusmod tempor"
+                />
+              </div>
+              <div class="plan__text">Sed do eiusmod tempor</div>
+            </li>
+            <li class="plan__item">
+              <div class="plan__icon">
+                <img
+                  src="./assets/images/icons/mail.svg"
+                  width="37"
+                  height="29"
+                  alt="Esse cillum dolore eu fugiat"
+                />
+              </div>
+              <div class="plan__text">Esse cillum dolore eu fugiat</div>
+            </li>
+            <li class="plan__item">
+              <div class="plan__icon">
+                <img
+                  src="./assets/images/icons/cash.svg"
+                  width="39"
+                  height="27"
+                  alt="Excepteur sint occaecat cupidatat non proident"
+                />
+              </div>
+              <div class="plan__text">
+                Excepteur sint occaecat cupidatat non proident
+              </div>
+            </li>
+          </ul>
+
+          <form class="order__form" id="order-form">
+            <select
+              class="order__system-type-select select"
+              name="system-type"
+              aria-label="Выберите тип системы"
+            >
+              <option class="select__option" value="" selected disabled hidden>
+                Выберите тип системы
+              </option>
+              <option class="select__option">Sed ut perspiciatis</option>
+              <option class="select__option">Nemo enim ipsam</option>
+              <option class="select__option">Et harum quidem</option>
+              <option class="select__option">Temporibus autem</option>
+              <option class="select__option">Itaque earum rerum</option>
+              <option class="select__option">Sed ut perspiciatis</option>
+              <option class="select__option">Nemo enim ipsam</option>
+              <option class="select__option">Et harum quidem</option>
+              <option class="select__option">Temporibus autem</option>
+              <option class="select__option">Itaque earum rerum</option>
+              <option class="select__option">Sed ut perspiciatis</option>
+              <option class="select__option">Nemo enim ipsam</option>
+              <option class="select__option">Et harum quidem</option>
+              <option class="select__option">Temporibus autem</option>
+              <option class="select__option">Itaque earum rerum</option>
+            </select>
+
+            <input
+              class="order__email-input text-input"
+              type="email"
+              name="email"
+              required
+              placeholder="Ваш email"
+            />
+            <input
+              class="order__name-input text-input"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Ваше имя"
+            />
+
+            <div class="order__range-input-wrapper">
+              <header class="order__range-input-header">
+                <span class="order__range-input-title">
+                  Sed ut perspiciatis, unde omnis iste natus
+                </span>
+                <output
+                  class="order__range-input-value"
+                  for="order-range-input"
+                  name="percentageOutput"
+                  >75 %</output
+                >
+              </header>
+              <input
+                class="range-input order__range-input"
+                id="order-range-input"
+                type="range"
+                name="percentage"
+                min="0"
+                max="100"
+                value="75"
+                aria-label="Процент"
+              />
+            </div>
+
+            <div class="order__file-input-wrapper">
+              <input
+                class="file-input order__file-input"
+                id="order-file-input"
+                type="file"
+                name="file"
+                hidden
+                aria-label="Прикрепить файл"
+              />
+              <button
+                class="button button_white order__file-input-button"
+                type="button"
+                aria-controls="order-file-input"
+              >
+                <span class="order__file-input-button-icon"></span>Прикрепить
+                файл
+              </button>
+            </div>
+
+            <button
+              class="button button_accent order__submit-button"
+              type="submit"
+            >
+              Отправить
+            </button>
+          </form>
+        </main>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="copyright">© 2018 «LOREMIPSUM.NET» Все права защищены.</div>
+
+      <div class="separator footer__separator"></div>
+
+      <ul class="payments-list">
+        <li class="payments-list__item">
+          <img
+            src="./assets/images/icons/qiwi.svg"
+            width="21"
+            height="20"
+            alt="QIWI wallet"
+          />
+          <div class="payments-list__text">QIWI wallet</div>
+        </li>
+        <li class="payments-list__item">
+          <img
+            src="./assets/images/icons/ya-money.svg"
+            width="15"
+            height="18"
+            alt="Yandex money"
+          />
+          <div class="payments-list__text">Yandex money</div>
+        </li>
+        <li class="payments-list__item">
+          <img
+            src="./assets/images/icons/webmoney.svg"
+            width="19"
+            height="18"
+            alt="Web Money"
+          />
+          <div class="payments-list__text">Web Money</div>
+        </li>
+      </ul>
+
+      <div class="separator footer__separator"></div>
+
+      <ul class="contacts-list">
+        <li class="contacts-list__item">
+          <img
+            src="./assets/images/icons/email.svg"
+            width="16"
+            height="13"
+            alt="Электронная почта"
+          />
+          <a class="contacts-list__text" href="mailto:info@ipsum228.com"
+            >info@ipsum228.com</a
+          >
+        </li>
+        <li class="contacts-list__item">
+          <img
+            src="./assets/images/icons/vk.svg"
+            width="12"
+            height="14"
+            alt="ВКонтакте"
+          />
+          <a class="contacts-list__text" href="https://vk.com">Мы вконтакте</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
