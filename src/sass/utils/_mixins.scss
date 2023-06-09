@@ -1,0 +1,44 @@
+@use 'sass:math';
+
+@mixin hover {
+  @media (hover: hover) {
+    &:not([disabled]):hover {
+      @content;
+    }
+  }
+}
+
+@mixin container($max-width: 1170px, $padding: 15px) {
+  --container-padding: #{$padding};
+
+  $side-padding: calc(50% - math.div($max-width, 2));
+  padding-left: $side-padding;
+  padding-right: $side-padding;
+}
+
+@mixin icon($width: 32px, $height: 32px) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@mixin placeholder($color) {
+  &::placeholder {
+    @if $color {
+      color: $color;
+      opacity: 1;
+    }
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @if $color {
+      color: $color;
+    }
+    @content;
+  }
+}

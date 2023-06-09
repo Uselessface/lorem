@@ -1,0 +1,9 @@
+@use '../utils/variables/font' as *;
+@use '../utils/variables/colors';
+
+html {
+  font-family: Lato, sans-serif;
+  font-size: min($fs-base, 4vw);
+  line-height: 1;
+  color: colors.$white;
+}

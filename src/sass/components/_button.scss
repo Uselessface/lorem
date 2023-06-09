@@ -1,0 +1,43 @@
+@use 'sass:color';
+@use '../utils/variables/colors';
+@use '../utils/mixins' as *;
+
+.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  box-sizing: content-box;
+  padding: 1.2em 2em;
+  min-width: 120px;
+  display: inline-block;
+
+  background: none;
+  border: 1.5px solid currentColor;
+  border-radius: 5px;
+
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 200ms, background-color 200ms, border-color 200ms;
+
+  &_accent {
+    background: colors.$accent;
+    color: colors.$white;
+
+    @include hover {
+      background: color.scale(colors.$accent, $lightness: -15%);
+    }
+  }
+
+  &_white {
+    background: colors.$white;
+    color: #2a2b30;
+
+    @include hover {
+      background: color.scale(colors.$white, $lightness: -10%);
+    }
+  }
+}

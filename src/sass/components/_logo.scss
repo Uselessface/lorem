@@ -1,0 +1,16 @@
+@use '../utils/variables/colors';
+@use '../utils/variables/font' as *;
+
+.logo {
+  font-size: 28px;
+  font-family: Raleway, sans-serif;
+  font-weight: $fw-extra-bold;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  & .highlighted {
+    color: #42a9ed;
+  }
+}

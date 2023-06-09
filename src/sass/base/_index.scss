@@ -1,0 +1,36 @@
+@use '../utils/variables/colors';
+@use 'sass:math';
+@forward 'fonts';
+@forward 'normalize';
+@forward 'typography';
+
+$scrollbar-track-color: #3d4050;
+$scrollbar-thumb-color: colors.$accent;
+$webkit-scrollbar-size: 7px;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  scrollbar-width: thin;
+  scrollbar-color: colors.$accent $scrollbar-track-color;
+}
+
+::-webkit-scrollbar {
+  width: $webkit-scrollbar-size;
+  height: $webkit-scrollbar-size;
+  background: inherit;
+}
+
+body::-webkit-scrollbar {
+  background: $scrollbar-track-color;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track-color;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: colors.$accent;
+  border-radius: math.div($webkit-scrollbar-size, 2);
+}

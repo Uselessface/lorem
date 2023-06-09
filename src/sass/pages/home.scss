@@ -1,0 +1,291 @@
+@use '../utils/variables/font' as *;
+@use '../utils/variables/colors';
+@use 'sass:math';
+@use '../utils/mixins' as *;
+@forward '../components/button';
+@forward '../components/input';
+
+.hero {
+  @include container;
+  padding-top: var(--header-height);
+  padding-bottom: 2rem;
+
+  min-height: 850px;
+  color: colors.$black;
+  background: top right 40% / cover no-repeat;
+  background-image: url('../../assets/images/hero.jpg');
+
+  @media (max-width: 1024px) {
+    background-image: url('../../assets/images/hero@1024.jpg');
+  }
+
+  .webp & {
+    background-image: url('../../assets/images/hero.webp');
+
+    @media (max-width: 1024px) {
+      background-image: url('../../assets/images/hero@1024.webp');
+    }
+  }
+
+  @media (max-width: 810px) {
+    min-height: unset;
+  }
+
+  > * {
+    margin: 0 var(--container-padding);
+  }
+
+  &__title {
+    margin-top: min(6.875rem, 13vw);
+    font-size: min(3rem, 7vw);
+    font-weight: $fw-bold;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  &__list-title {
+    margin-top: min(6.25rem, 11vw);
+    font-size: 1.25rem;
+    font-weight: $fw-bold;
+  }
+
+  &__list {
+    margin-top: 0.875rem;
+    padding-inline-start: 1.06rem;
+    list-style-type: '-';
+  }
+
+  &__list-item {
+    margin-top: 0.5rem;
+    padding-inline-start: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  &__buttons {
+    margin-top: 5.625rem;
+
+    @media (max-width: 417px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__more-button {
+    margin-left: 30px;
+    border-color: #6f6d7b;
+
+    @media (max-width: 417px) {
+      margin-top: 10px;
+      margin-left: unset;
+    }
+  }
+}
+
+.order {
+  $bg-color: #272733;
+  @include container;
+
+  padding-top: min(7.56rem, 15vw);
+  padding-bottom: min(9.44rem, 20vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $bg-color top / cover;
+  background-image: url('../../assets/images/order.png');
+
+  @media (max-width: 1024px) {
+    background-image: url('../../assets/images/order@1024.png');
+  }
+
+  .webp & {
+    background-image: url('../../assets/images/order.webp');
+
+    @media (max-width: 1024px) {
+      background-image: url('../../assets/images/order@1024.webp');
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: min(2.25rem, 7.2vw);
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    margin: 2rem var(--container-padding) 0;
+    font-size: 1.125rem;
+    color: #bbbbbb;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__plan {
+    margin-top: min(5rem, 9vw);
+  }
+
+  $form-column: 370px;
+  $form-row: 48px;
+
+  &__form {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, $form-column);
+    grid-auto-rows: minmax($form-row, auto);
+    gap: 30px;
+
+    @media (max-width: 1235px) {
+      grid-template-columns: auto;
+      width: min(35rem, 90vw);
+    }
+  }
+
+  &__range-input-wrapper {
+    grid-column: span 2;
+
+    @media (max-width: 1235px) {
+      grid-column: unset;
+    }
+  }
+
+  &__system-type-select,
+  &__email-input,
+  &__name-input {
+    font-size: 18px;
+    color: $bg-color;
+  }
+
+  &__email-input,
+  &__name-input {
+    @include placeholder($bg-color);
+  }
+
+  &__range-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__range-input-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: min(1.125rem, 4.3vw);
+  }
+
+  &__range-input-value {
+    font-weight: $fw-bold;
+  }
+
+  &__file-input-button {
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid colors.$accent;
+
+    font-size: 15px;
+    font-weight: $fw-bold;
+    color: $bg-color;
+
+    &-icon {
+      @include icon(17px, 20px);
+      background-image: url('../../assets/images/icons/file.svg');
+    }
+  }
+
+  &__submit-button {
+    grid-column: 1 / -1;
+    box-sizing: border-box;
+    margin: 25px auto 0;
+    height: $form-row;
+    width: $form-column;
+
+    font-size: 15px;
+    font-weight: $fw-bold;
+
+    @media (max-width: 1235px) {
+      width: 100%;
+    }
+  }
+
+  &__file-input-button,
+  &__submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.plan {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  @media (max-width: 1055px) {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__item {
+    width: 209px;
+    font-size: 16px;
+    text-align: center;
+
+    @media (max-width: 1055px) {
+      margin: 0 20px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: colors.$accent;
+    border: 5px solid colors.$accent-darken;
+    border-radius: 50%;
+  }
+
+  &__item + &__item &__icon::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: calc(100% + 15px);
+    width: 140px;
+    height: 20px;
+    display: block;
+    background: space no-repeat url('../../assets/images/icons/dot.svg');
+
+    @media (max-width: 1235px) {
+      width: 110px;
+    }
+
+    @media (max-width: 1055px) {
+      display: none;
+    }
+  }
+
+  &__text {
+    margin: 20px auto 6px;
+    width: 188px;
+    line-height: 1.2;
+  }
+}

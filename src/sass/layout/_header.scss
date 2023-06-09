@@ -1,0 +1,39 @@
+@use '../utils/variables/colors';
+@use '../utils/mixins' as *;
+@forward '../components/logo';
+
+html {
+  --header-height: 100px;
+
+  @media (max-width: 810px) {
+    --header-height: 70px;
+  }
+}
+
+.header {
+  @include container;
+
+  position: fixed;
+  z-index: 9;
+  inset: 0;
+  bottom: unset;
+
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(16, 16, 29, 0.9);
+
+  &__logo {
+    margin-left: var(--container-padding);
+
+    @media (max-width: 810px) {
+      font-size: 18px;
+    }
+  }
+
+  &__nav {
+    margin-right: var(--container-padding);
+  }
+}
